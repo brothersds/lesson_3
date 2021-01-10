@@ -9,17 +9,22 @@
 
 quit_key = False
 
-def user_sum(args):
-    
+
+def my_func_summ(*args):
+    global quit_key
+    my_data = args[0]
+    my_summ = 0
+    for index in my_data:
+        try:
+            if 'Q' in index:
+                quit_key = True
+                return my_summ
+            my_summ += int(index)
+        except ValueError:
+            continue
+    return my_summ
 
 
-# user_list = list((input('Для выхода нажмите Q\nВведите числа, разделенных пробелами: ')).split())
-user_list = [12, 24, 76, 50, 76, 36]
-print(sum(user_list[0:len(user_list)]))
-
-# for i in range(1, len(user_list)):
-#     sum(user_list[i])
+user_list = input('Для выхода нажмите Q\nВведите числа, разделенных пробелами: ').split(' ')
 
 
-# if input('Выход - Q, \nЛюбая клавиша - продолжить: ').upper() == 'Q':
-#     break
