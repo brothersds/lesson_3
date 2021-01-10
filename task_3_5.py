@@ -7,17 +7,20 @@
 завершить программу.
 '''
 
-quit_key = False
+quit_task = False
 
 
 def my_func_summ(*args):
-    global quit_key
+    global quit_task
     my_data = args[0]
     my_summ = 0
     for index in my_data:
         try:
             if 'Q' in index:
-                quit_key = True
+                quit_task = True
+                return my_summ
+            elif 'q' in index:
+                quit_task = True
                 return my_summ
             my_summ += int(index)
         except ValueError:
@@ -25,6 +28,10 @@ def my_func_summ(*args):
     return my_summ
 
 
-user_list = input('Для выхода нажмите Q\nВведите числа, разделенных пробелами: ').split(' ')
-
-
+user_summ = 0
+while not quit_task:
+    user_list = input('Для выхода нажмите Q\nВведите числа, разделенных пробелами: ').split()
+    user_summ += my_func_summ(user_list)
+    print(f'Сумма чисел равна: {user_summ}')
+    continue
+print('end')
