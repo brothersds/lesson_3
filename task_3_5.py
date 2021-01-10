@@ -7,6 +7,19 @@
 завершить программу.
 '''
 
+quit_key = False
 
-user_list = list((input('Введите числа, разделенных пробелами: \n')).split())
+def user_sum(args):
+    
 
+
+# user_list = list((input('Для выхода нажмите Q\nВведите числа, разделенных пробелами: ')).split())
+user_list = [12, 24, 76, 50, 76, 36]
+print(sum(user_list[0:len(user_list)]))
+
+# for i in range(1, len(user_list)):
+#     sum(user_list[i])
+
+
+# if input('Выход - Q, \nЛюбая клавиша - продолжить: ').upper() == 'Q':
+#     break
